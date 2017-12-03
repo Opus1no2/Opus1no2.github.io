@@ -8,7 +8,7 @@
   "scripts": {
     "css": "./node_modules/.bin/cleancss -o styles/main.css src/styles/*.css",
     "images": "cp src/images/* images/",
-    "build": "yarn css && cp src/index.html index.html",
+    "build": "yarn images && yarn css && cp src/index.html index.html",
     "serve": "yarn build && python -m SimpleHTTPServer 8000"
   },
   "dependencies": {
