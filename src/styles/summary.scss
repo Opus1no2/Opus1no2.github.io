@@ -1,0 +1,19 @@
+.summary {
+  background: #1089ef;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 10px #383940;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+@media(min-width: 700px) {
+  .summary-fill {
+    height: 71px;
+    width: 100%;
+    background: #1089ef;
+  }
+}

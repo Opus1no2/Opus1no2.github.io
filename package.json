@@ -1,18 +1,20 @@
 {
-  "name": "TT",
+  "name": "me",
   "version": "1.0.0",
-  "description": "Travis Website",
-  "author": "Travis Tillotson",
+  "main": "index.js",
+  "repository": "https://github.com/Opus1no2/me.git",
+  "author": "Opus1no2 <tillotson.travis@gmail.com>",
   "license": "MIT",
-  "private": false,
-  "scripts": {
-    "css": "./node_modules/.bin/cleancss -o styles/main.css src/styles/*.css",
-    "images": "cp src/images/* images/",
-    "build": "yarn images && yarn css && cp src/index.html index.html",
-    "serve": "yarn build && python -m SimpleHTTPServer 8000"
-  },
-  "dependencies": {
-    "clean-css-cli": "^4.1.10",
-    "normalize.css": "^7.0.0"
+  "devDependencies": {
+    "css-loader": "^3.4.2",
+    "file-loader": "^5.1.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   }
 }
