@@ -6,8 +6,8 @@ const Prototypes = () => {
     <div className="box learning">
       <h2>Prototypes</h2>
       <ul>
-        <li><a href="/spheres.html">Spheres</a></li>
-        <li><a href="/orbit0.html">Orbit 0</a></li>
+        <li><Link to="/Spheres/">Spheres</Link></li>
+        <li><Link to="/Orbit0/">Orbit 0</Link></li>
         <li><a href="/orbit1.html">Orbit 1</a></li>
         <li><a href="/orbit2.html">Orbit 2</a></li>
         <li><Link to="/Mandlebrot/">Mandlebrot</Link></li>

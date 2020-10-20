@@ -1,8 +1,8 @@
-import './styles/index.scss';
-
-import Stats from 'three/examples/jsm/libs/stats.module.js';
+import React, { useEffect, useCallback } from 'react';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { Link } from 'gatsby';
 import * as THREE from 'three';
+
 const scene = new THREE.Scene();
 
 /////////////////////////////////////////////////////
@@ -53,12 +53,6 @@ const spotLightHelper = new THREE.DirectionalLightHelper(light, 5);
 scene.add(spotLightHelper);
 
 /////////////////////////////////////////////////////
-//                       STATS                     //
-/////////////////////////////////////////////////////
-const stats = new Stats();
-document.body.appendChild(stats.domElement);
-
-/////////////////////////////////////////////////////
 //                       CONTROLS                  //
 /////////////////////////////////////////////////////
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -86,30 +80,40 @@ scene.add(satellite1);
 scene.add(satellite2);
 
 const dist = 30;
-function animate(time) {
-	requestAnimationFrame(animate);
 
-  time *= 0.001;
+const Orbit0 = () => {
+  const animate = useCallback((time) => {
+    requestAnimationFrame(animate);
 
-  sphere.rotation.y += 0.01;
-  sphere.rotation.x = 0.5;
+    time *= 0.001;
 
-  // 30 influences the distance
-  satellite.position.x = Math.cos(time) * dist;
+    sphere.rotation.y += 0.01;
+    sphere.rotation.x = 0.5;
 
-  // doesn't matter if sin or cos
-  satellite.position.y = Math.cos(time) * dist;
-  satellite.position.z = Math.sin(time) * dist;
+    satellite.position.x = Math.cos(time) * dist;
 
-  satellite1.position.x = Math.cos(time) * dist;
-  satellite1.position.y = Math.sin(time) * dist;
-  satellite1.position.z = Math.sin(time) * dist;
+    // doesn't matter if sin or cos
+    satellite.position.y = Math.cos(time) * dist;
+    satellite.position.z = Math.sin(time) * dist;
 
-  satellite2.position.x = Math.cos(time) * dist;
-  //satellite2.position.y = Math.cos(time) * 30;
-  satellite2.position.z = Math.sin(time) * dist;
-  renderer.render(scene, camera);
-  stats.update();
-}
+    satellite1.position.x = Math.cos(time) * dist;
+    satellite1.position.y = Math.sin(time) * dist;
+    satellite1.position.z = Math.sin(time) * dist;
 
-animate();
+    satellite2.position.x = Math.cos(time) * dist;
+    satellite2.position.z = Math.sin(time) * dist;
+    renderer.render(scene, camera);
+  }, []);
+
+  useEffect(() => {
+    animate();
+  }, [animate]);
+
+  return (
+    <div className="pull-right">
+      <Link to="/">Home</Link>
+    </div>
+  );
+};
+
+export default Orbit0;
