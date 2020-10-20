@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Electrolize', sans-serif;
+}
+
+h1, h2 {
+  margin: 0;
+  color: #609e1c;
+}
+
+body {
+  background: black;
+  color: #f5f5f5;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: #2d6bb9;
+
+  &:visited {
+    color: #2d6bb9;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  min-height: 100vh;
+  background: #000000c7;
+}
+
+@media(min-width: 700px) {
+  main {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+span {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.box {
+  border: solid 1px #305638;
+  background: #000000c7;
+  margin-top: 25px;
+  padding: 10px;
+}
+
+.cont {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+@media(min-width: 700px) {
+  .cont {
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.last {
+  flex-direction: column;
+
+  .box {
+    margin-bottom: 25px;
+  }
+}
+
+@media(min-width: 700px) {
+  .row {
+    flex-wrap: unset;
+  }
+
+  .last {
+    flex-direction: row;
+
+    .box {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.full-page {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.name {
+  margin-bottom: 13px;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media(min-width: 700px) {
+  .bio {
+    flex: 0;
+    min-width: 245px;
+    margin-right: 25px;
+  }
+}
+
+.pic {
+  width: 171px;
+  height: 200px;
+  background: url('../images/travis1.png') no-repeat;
+  background-size: contain;
+  align-self: center;
+}
+
+@media(min-width: 700px) {
+  .about {
+    //width: 74%;
+    height: 100%;
+  }
+}
+
+.skills {
+  width: 100%;
+}
+
+@media(min-width: 700px) {
+  .skills {
+    max-width: 245px;;
+    margin-left: 25px;
+  }
+}
+
+@media(min-width: 700px) {
+  .projects {
+    min-width: 245px;
+  }
+
+  .learning {
+    min-width: 245px;
+  }
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.stats {
+  width: 200px;
+}
+
+.outlined {
+  border: solid 1px white;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: solid 1px #074210;
+}
+
+.upper-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
