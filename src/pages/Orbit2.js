@@ -9,20 +9,39 @@ import moonImg from '../images/moon_1024.jpg';
 
 extend({ OrbitControls });
 
-const Earth = () => {
+const Sun = ({child}) => {
+  return (
+    <mesh>
+      <sphereBufferGeometry args={[20,32,32]} />
+      <meshLambertMaterial color={0xcebd28} emissive={0xc9c441} />
+      {child()}
+    </mesh>
+  )
+};
+
+const Earth = ({child}) => {
   const earthRef = useRef();
   const loader = new TextureLoader();
   const texture = loader.load(earthImg);
+  const dist = 40;
 
-  useFrame(
-    ({ clock }) =>
-      (earthRef.current.rotation.x = earthRef.current.rotation.y = earthRef.current.rotation.z =
-        Math.cos(clock.getElapsedTime() / 8) * Math.PI));
+  useFrame(({ clock }) => {
+    const earth = earthRef.current;
+    const time = clock.getElapsedTime();
+
+    earth.rotation.y += 0.01;
+    earth.rotation.x = 0.5;
+
+    earth.position.x = Math.cos(time) * dist;
+    earth.position.y = Math.cos(time) * dist;
+    earth.position.z = Math.sin(time) * dist;
+  });
 
   return (
     <mesh ref={earthRef}>
-      <sphereBufferGeometry args={[10, 32, 32]} />
+      <sphereBufferGeometry args={[7, 32, 32]} />
       <meshLambertMaterial map={texture}/>
+      {child()}
     </mesh>
   );
 };
@@ -31,10 +50,10 @@ const Moon = () => {
   const moonRef = useRef();
   const loader = new TextureLoader();
   const texture = loader.load(moonImg);
-  const dist = 30;
+  const dist = 10;
 
-  useFrame(({ clock }) => {
-    const time = clock.getElapsedTime();
+  useFrame(() => {
+    const time = Date.now() / 500;
     const moon = moonRef.current;
 
     moon.rotation.y -= 0.01;
@@ -53,21 +72,21 @@ const Moon = () => {
   );
 };
 
-const Orbit1 = () => {
+const Orbit2 = () => {
   return (
     <div className="full-page">
       <div className="pull-right">
         <Link to="/">Home</Link>
       </div>
-      <Canvas camera={{ fov: 75, near: 0.1, far: 1000, look: [0,0,0], position: [40,20,40]}}>
+      <Canvas camera={{ fov: 75, near: 0.1, far: 1000, look: [0,0,0], position: [100, 20, 60]}}>
         <directionalLight color={0xffffff} intensity={1} position={[-10, 0, 30]}/>
         <ambientLight color={0xffffff} intensity={0.5} />
-        <Earth />
-        <Moon />
+        <pointLight color={0xffffff} intensity={0.5} distance={100} />
+        <Sun child={() => <Earth child={Moon} />} />
         <Controls />
       </Canvas>
     </div>
   );
 };
 
-export default Orbit1;
+export default Orbit2;
