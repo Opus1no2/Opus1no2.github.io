@@ -33,7 +33,6 @@ const FractalTree = () => {
     }
   }, []);
 
-
   const draw = useCallback((angle, depth, ctx) => {
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
     fractal_tree(window.innerWidth / 2, window.innerHeight, 90, depth, angle, ctx);

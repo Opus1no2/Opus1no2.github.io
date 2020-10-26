@@ -1,10 +1,10 @@
-import React, { useRef, useState, useEffect } from "react";
+import React from 'react';
 import About from '../components/About';
 import Portrait from '../components/Portrait';
 import Skills from '../components/Skills';
 import Games from '../components/Games';
 import Prototypes from '../components/Prototypes';
-import { Canvas, useFrame, useThree, extend } from 'react-three-fiber';
+import { Canvas } from 'react-three-fiber';
 import Sphere from '../components/Sphere';
 import Effects from '../components/Effects';
 

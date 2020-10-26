@@ -8,8 +8,8 @@ const Prototypes = () => {
       <ul>
         <li><Link to="/Spheres/">Spheres</Link></li>
         <li><Link to="/Orbit0/">Orbit 0</Link></li>
-        <li><a href="/orbit1.html">Orbit 1</a></li>
-        <li><a href="/orbit2.html">Orbit 2</a></li>
+        <li><Link to="/Orbit1/">Orbit 1</Link></li>
+        <li><Link to="/Orbit2/">Orbit 2</Link></li>
         <li><Link to="/Mandlebrot/">Mandlebrot</Link></li>
         <li><Link to="/CirclePattern/">Circle Patterns</Link></li>
         <li><Link to="/FractalTree/">Fractal Tree</Link></li>

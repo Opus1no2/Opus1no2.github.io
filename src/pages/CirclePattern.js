@@ -6,10 +6,11 @@ const CirclePattern = () => {
   const sections = 200;
 
   const canvasRef = useRef(null);
+  const multiRef = useRef(0.01);
+
   const [width, setWidth] = useState(600);
   const [height, setHeight] = useState(600);
   const [point_coords, setPointCoords] = useState([]);
-  let multiplyer = 0.01;
 
   const radius = width / 2;
 
@@ -29,10 +30,10 @@ const CirclePattern = () => {
     return Math.round(width / 2 * Math.sin((i * (2 * Math.PI)) / sections) + radius);
   }, [width]);
 
-  const draw_lines = useCallback((point_coords, multiplyer, sections, radius, ctx) => {
+  const draw_lines = useCallback((point_coords, sections, radius, ctx) => {
     for (let i = 0; i < point_coords.length; i++) {
 
-      const line_to = i * multiplyer;
+      const line_to = i * multiRef.current;
       const nextX = get_x_coord(line_to, sections, radius);
       const nextY = get_y_coord(line_to, sections, radius);
 
@@ -46,16 +47,16 @@ const CirclePattern = () => {
   }, [get_x_coord, get_y_coord]);
 
   const animate = useCallback((ctx, canvas) => {
-    multiplyer += 0.01;
+    multiRef.current += 0.01;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    if (multiplyer >= 360) {
-      multiplyer = 0.00;
+    if (multiRef.current >= 360) {
+      multiRef.current = 0.00;
     }
 
     draw_circle(ctx);
-    draw_lines(point_coords, multiplyer, sections, radius, ctx);
+    draw_lines(point_coords, sections, radius, ctx);
   }, [draw_circle, draw_lines, point_coords, radius]);
 
   useEffect(() => {
