@@ -20,7 +20,9 @@ const Spheres = () => {
   const renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.domElement.classList.add('full-page');
-  document.body.appendChild(renderer.domElement);
+
+  // todo: fix
+  //document.body.appendChild(renderer.domElement);
 
   const grid = new THREE.GridHelper(100, 15);
   scene.add(grid);
