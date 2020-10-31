@@ -13,6 +13,7 @@ const Prototypes = () => {
         <li><Link to="/Mandlebrot/">Mandlebrot</Link></li>
         <li><Link to="/CirclePattern/">Circle Patterns</Link></li>
         <li><Link to="/FractalTree/">Fractal Tree</Link></li>
+        <li><Link to="/Narcissus/">Narcissus</Link></li>
       </ul>
     </div>
   );
