@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Link } from 'gatsby';
-import { Canvas, useFrame, extend } from 'react-three-fiber';
+import { Canvas, useFrame } from 'react-three-fiber';
 import Controls from '../components/Controls';
 
 const Satellite = (props) => {

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { TextureLoader } from 'three';
 import { Link } from 'gatsby';
-import { Canvas, useFrame, extend } from 'react-three-fiber';
+import { Canvas, useFrame } from 'react-three-fiber';
 import Controls from '../components/Controls';
 import earthImg from '../images/earth_lights_2048.png';
 import moonImg from '../images/moon_1024.jpg';
