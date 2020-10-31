@@ -16,7 +16,7 @@ const Narcissus = () => {
     border: solid 3px #609e1c;
   `;
 
-  const videoRef = useRef(HTMLVideoElement);
+  const videoRef = useRef();
 
   useEffect(() => {
     navigator.mediaDevices.getUserMedia({video: true}).then((stream) => {
