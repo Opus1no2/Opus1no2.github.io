@@ -1,6 +1,6 @@
-import React, { useEffect, useCallback } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
-import { Canvas, extend } from 'react-three-fiber';
+import { Canvas } from 'react-three-fiber';
 import Sphere from '../components/Sphere';
 import Controls from '../components/Controls';
 

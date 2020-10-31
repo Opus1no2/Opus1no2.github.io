@@ -1,13 +1,10 @@
 import React, { useRef } from 'react';
 import { TextureLoader } from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { Link } from 'gatsby';
 import { Canvas, useFrame, extend } from 'react-three-fiber';
 import Controls from '../components/Controls';
 import earthImg from '../images/earth_lights_2048.png';
 import moonImg from '../images/moon_1024.jpg';
-
-extend({ OrbitControls });
 
 const Sun = ({child}) => {
   return (
