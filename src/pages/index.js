@@ -12,6 +12,8 @@ export default function Home() {
   const sphereCnt = 700;
   const spheres = [...Array(sphereCnt).fill(null)];
 
+  console.log('t');
+
   return (
     <main>
       <div className="cont">
