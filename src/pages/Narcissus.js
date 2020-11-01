@@ -13,7 +13,13 @@ const Narcissus = () => {
   const Video = styled.video`
     transform: scaleX(-1);
     border-radius: 80px;
-    border: solid 3px #609e1c;
+    border: solid 10px #609e1c;
+    box-shadow:
+      0 0 0 10px hsl(20, 100%, 50%),
+      0 0 0 15px hsl(50, 100%, 60%),
+      0 0 0 20px hsl(10, 100%, 70%),
+      0 0 0 25px hsl(200, 100%, 80%),
+      0 0 0 30px hsl(150, 100%, 90%);
   `;
 
   const videoRef = useRef();
