@@ -7,12 +7,11 @@ import Prototypes from '../components/Prototypes';
 import { Canvas } from 'react-three-fiber';
 import Sphere from '../components/Sphere';
 import Effects from '../components/Effects';
+import HeaderNav from '../components/HeaderNav';
 
 export default function Home() {
   const sphereCnt = 700;
   const spheres = [...Array(sphereCnt).fill(null)];
-
-  console.log('t');
 
   return (
     <main>

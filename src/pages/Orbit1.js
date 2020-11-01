@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import { TextureLoader } from 'three';
-import { Link } from 'gatsby';
 import { Canvas, useFrame } from 'react-three-fiber';
 import Controls from '../components/Controls';
 import earthImg from '../images/earth_lights_2048.png';
 import moonImg from '../images/moon_1024.jpg';
+import HeaderNav from '../components/HeaderNav';
 
 const Earth = () => {
   const earthRef = useRef();
@@ -53,9 +53,7 @@ const Moon = () => {
 const Orbit1 = () => {
   return (
     <div className="full-page">
-      <div className="pull-right">
-        <Link to="/">Home</Link>
-      </div>
+      <HeaderNav />
       <Canvas camera={{ fov: 75, near: 0.1, far: 1000, look: [0,0,0], position: [40,20,40]}}>
         <directionalLight color={0xffffff} intensity={1} position={[-10, 0, 30]}/>
         <ambientLight color={0xffffff} intensity={0.5} />

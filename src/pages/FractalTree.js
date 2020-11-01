@@ -1,5 +1,5 @@
-import { Link } from "gatsby";
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import HeaderNav from '../components/HeaderNav';
 
 const FractalTree = () => {
   const [angle, setAngle] = useState(20);
@@ -68,9 +68,7 @@ const FractalTree = () => {
 
   return (
     <>
-      <div className="pull-left">
-        <Link to="/">Home</Link>
-      </div>
+      <HeaderNav />
       <div className="inputs upper-right">
         <label htmlFor="angle">Angle</label>
         <input data-el="angle-adjust" type="number" value={angle} onChange={adjustAngle} />

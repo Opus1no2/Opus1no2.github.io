@@ -77,10 +77,12 @@ const Narcissus = () => {
   }, [color]);
 
   return (
-    <Cont>
-      <Canvas ref={canvasRef} />
-      <Video ref={videoRef}></Video>
-    </Cont>
+    <>
+      <Cont>
+        <Canvas ref={canvasRef} />
+        <Video ref={videoRef}></Video>
+      </Cont>
+    </>
   );
 };
 

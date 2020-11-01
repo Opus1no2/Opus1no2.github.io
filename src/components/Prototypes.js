@@ -14,6 +14,7 @@ const Prototypes = () => {
         <li><Link to="/CirclePattern/">Circle Patterns</Link></li>
         <li><Link to="/FractalTree/">Fractal Tree</Link></li>
         <li><Link to="/Narcissus/">Narcissus</Link></li>
+        <li><Link to="/Shaders0/">Shaders 0</Link></li>
       </ul>
     </div>
   );

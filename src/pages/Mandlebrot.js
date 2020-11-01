@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Link } from 'gatsby';
+import HeaderNav from '../components/HeaderNav';
 
 const Mandlebrot = () => {
   const min_real = -2.5
@@ -64,9 +64,7 @@ const Mandlebrot = () => {
 
   return (
     <div className="mandlebrot-cont">
-      <div className="pull-right">
-        <Link to="/">Home</Link>
-      </div>
+      <HeaderNav />
       <canvas ref={canvasRef} id="canvas" className="full-page"></canvas>
     </div>
   );

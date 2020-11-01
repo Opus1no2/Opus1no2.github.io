@@ -1,5 +1,5 @@
-import { Link } from 'gatsby';
 import React, { useEffect, useRef, useState, useCallback } from 'react';
+import HeaderNav from '../components/HeaderNav';
 
 // It is what it is
 const CirclePattern = () => {
@@ -101,9 +101,7 @@ const CirclePattern = () => {
 
   return (
     <>
-      <div className="pull-right">
-        <Link to="/">Home</Link>
-      </div>
+      <HeaderNav />
       <div className="cont">
         <canvas ref={canvasRef} id="circle"></canvas>
       </div>
