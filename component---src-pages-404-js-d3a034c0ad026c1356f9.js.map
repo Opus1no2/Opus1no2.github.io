@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/404.js"],"names":["Lost"],"mappings":"2FAAA,wEAEe,SAASA,IACtB,OAAO","file":"component---src-pages-404-js-d3a034c0ad026c1356f9.js","sourcesContent":["import React from 'react';\n\nexport default function Lost() {\n  return <div>In the desert there is nothing and no man needs nothing.</div>\n}\n"],"sourceRoot":""}
